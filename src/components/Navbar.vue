@@ -38,7 +38,10 @@ nav {
   width: 100%;
   padding: 20px;
   top: 0px;
-  background-image: linear-gradient(rgba(74, 74, 74, 0.851), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    rgba(98, 98, 98, 0.755),
+    rgba(110, 110, 110, 0)
+  );
 }
 .nav_container {
   margin: auto;
@@ -57,6 +60,7 @@ nav {
   border-radius: 20px;
   color: white;
   height: fit-content;
+  font-weight: 500;
 }
 
 .main_nav {
@@ -69,7 +73,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 15%;
+  width: 16%;
 }
 .icon {
   color: white;
