@@ -51,7 +51,7 @@ export default {
 .card_owner h2 {
   font-weight: 500;
 }
-.skill_category {
+.filled_text {
   padding: 2px 15px;
   background-color: #0177e4;
   color: white;

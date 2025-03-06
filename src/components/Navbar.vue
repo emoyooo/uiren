@@ -55,6 +55,8 @@ nav {
   background-color: #0177e4;
   padding: 10px 20px;
   border-radius: 20px;
+  color: white;
+  height: fit-content;
 }
 
 .main_nav {
