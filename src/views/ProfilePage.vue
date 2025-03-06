@@ -25,8 +25,14 @@
               <h3>{{ location }}</h3>
             </div>
           </div>
+          <div class="price">
+            <span>{{ priceHour }} / {{ priceMonth }}</span>
+          </div>
         </div>
-        <div class="button_container">Enroll</div>
+        <div class="column_flex">
+          <div class="button_container">Enroll</div>
+          <router-link to="/">View in map</router-link>
+        </div>
       </div>
     </div>
   </header>
@@ -62,16 +68,24 @@ export default {
       type: String,
       default: "Arkalyk, Kazakhstan",
     },
+    priceHour: {
+      type: String,
+      default: "2000₸",
+    },
+    priceMonth: {
+      type: String,
+      default: "40000₸",
+    },
   },
 };
 </script>
 
 <style scoped>
-.flex {
-  display: flex;
-  column-gap: 5px;
+h1 {
+  font-weight: 600;
+  line-height: 30px;
 }
-.flex .filled_text {
+.filled_text {
   text-wrap: nowrap;
 }
 .profile_background {
@@ -91,6 +105,7 @@ export default {
   background-color: rgb(255, 255, 255);
   width: 100%;
   padding: 30px 50px;
+  border: 3px solid rgb(113, 113, 113);
 }
 .container {
   position: relative;
@@ -99,9 +114,13 @@ export default {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  margin: 0 460px 0 70px;
+  margin: 0 420px 0 50px;
 }
 .button_container {
   padding: 10px 40px;
+}
+a {
+  color: #0177e4;
+  text-decoration: underline;
 }
 </style>
