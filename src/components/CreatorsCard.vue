@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card lined">
     <div class="card_ownerFull">
       <div class="pfp">
         <img :src="imageURL" alt="" />
@@ -46,7 +46,6 @@ export default {
   color: black;
   padding: 20px 30px;
   border-radius: 30px;
-  box-shadow: 1px 1px 5px #b6b6b6;
 }
 .card_owner h2 {
   font-weight: 500;

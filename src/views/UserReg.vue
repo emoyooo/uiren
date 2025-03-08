@@ -23,9 +23,7 @@
             required
           />
         </label>
-        <button class="button_container submition" type="submit">
-          Отправить
-        </button>
+        <button class="button_container submition" type="submit">Submit</button>
       </form>
     </div>
   </div>
