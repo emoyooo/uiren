@@ -1,5 +1,5 @@
 <template>
-  <div class="card lined">
+  <div class="card">
     <div class="card_ownerFull">
       <div class="pfp">
         <img :src="imageURL" alt="" />
@@ -8,6 +8,9 @@
         <h2>{{ name }}</h2>
         <div class="skill_category">
           <h3>{{ skillCategory }}</h3>
+        </div>
+        <div class="city">
+          <h4>{{ city }}</h4>
         </div>
       </div>
     </div>
@@ -26,6 +29,7 @@ export default {
     name: String,
     skillCategory: String,
     text: String,
+    city: String,
   },
 };
 </script>
@@ -46,11 +50,12 @@ export default {
   color: black;
   padding: 20px 30px;
   border-radius: 30px;
+  box-shadow: 1px 1px 5px #b6b6b6;
 }
 .card_owner h2 {
   font-weight: 500;
 }
-.filled_text {
+.skill_category {
   padding: 2px 15px;
   background-color: #0177e4;
   color: white;
@@ -64,5 +69,10 @@ export default {
 }
 .caption {
   margin-top: 20px;
+}
+.city h4 {
+  margin: 0;
+  font-weight: normal;
+  color: #555;
 }
 </style>
