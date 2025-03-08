@@ -36,7 +36,7 @@ export default {
       creators: [
         {
           id: 1,
-          imageURL: "/public/images/pfp.png",
+          imageURL: "/public/images/1.jpg",
           name: "Vladimir",
           skillCategory: "Web Developer",
           text: "Professional guitarist with 10+ years of experience. Specializes in blues, rock, and classical guitar.",
@@ -44,7 +44,7 @@ export default {
         },
         {
           id: 2,
-          imageURL: "/public/images/pfp.png",
+          imageURL: "/public/images/2.jpg",
           name: "Aigul",
           skillCategory: "Graphic Designer",
           text: "Expert in 3D modeling and animation. Works with Blender, Maya, and ZBrush to create stunning digital art.",
@@ -52,7 +52,7 @@ export default {
         },
         {
           id: 3,
-          imageURL: "/public/images/marat_opera.png",
+          imageURL: "/public/images/3.jpg",
           name: "Marat",
           skillCategory: "Opera Singer",
           text: "Trained opera singer with performances in national and international theaters. Teaches vocal techniques and stage presence.",
@@ -60,7 +60,7 @@ export default {
         },
         {
           id: 4,
-          imageURL: "/public/images/dina_calligraphy.png",
+          imageURL: "/public/images/9.jpg",
           name: "Dina",
           skillCategory: "Calligraphy Artist",
           text: "Passionate calligrapher specializing in modern and Arabic calligraphy. Teaches brush pen and ink techniques.",
@@ -68,7 +68,7 @@ export default {
         },
         {
           id: 5,
-          imageURL: "/public/images/serik_carpenter.png",
+          imageURL: "/public/images/3.jpg",
           name: "Serik",
           skillCategory: "Woodworker & Carpenter",
           text: "Creates handmade furniture and wood carvings. Offers classes in woodworking and DIY home projects.",
@@ -76,7 +76,7 @@ export default {
         },
         {
           id: 6,
-          imageURL: "/public/images/sofia_ballet.png",
+          imageURL: "/public/images/8.jpg",
           name: "Sofia",
           skillCategory: "Ballet Instructor",
           text: "Professional ballerina with experience in classical and contemporary dance. Conducts private and group ballet lessons.",
@@ -84,7 +84,7 @@ export default {
         },
         {
           id: 7,
-          imageURL: "/public/images/amir_programmer.png",
+          imageURL: "/public/images/6.jpg",
           name: "Amir",
           skillCategory: "Full-Stack Developer",
           text: "Software engineer specializing in web development (React, Vue, Node.js). Helps beginners build projects from scratch.",
@@ -92,7 +92,7 @@ export default {
         },
         {
           id: 8,
-          imageURL: "/public/images/elena_painting.png",
+          imageURL: "/public/images/7.jpg",
           name: "Elena",
           skillCategory: "Painter & Illustrator",
           text: "Fine artist and illustrator skilled in acrylic, watercolor, and digital painting. Offers step-by-step art coaching.",
