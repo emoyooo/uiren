@@ -34,4 +34,5 @@ a {
 
 .lined {
   border: 1px solid #b9b9b9;
+  border-radius: 30px;
 }

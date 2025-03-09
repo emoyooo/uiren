@@ -3,14 +3,9 @@
     <div
       class="profile_background"
       :style="{ backgroundImage: `url(${backgroundURL})` }"
-    >
-      <div>
-        <h1>Profile</h1>
-        <p>ID: {{ userId }}</p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="profile_mainInfo">
+    ></div>
+    <div class="container profile_container">
+      <div class="profile_mainInfo lined">
         <div class="pfp">
           <img :src="ImageURL" alt="" />
         </div>
@@ -29,10 +24,51 @@
             <span>{{ priceHour }} / {{ priceMonth }}</span>
           </div>
         </div>
-        <div class="column_flex">
-          <div class="button_container">Enroll</div>
-          <router-link to="/">View in map</router-link>
+      </div>
+      <div class="bio font_larger">
+        <div class="bio_text lined padding">
+          <p>{{ bio }}</p>
         </div>
+        <div class="contacts lined padding">
+          <div>
+            <b>Whatsapp:</b> <span>{{ whatsapp }}</span>
+          </div>
+          <div>
+            <b>Telegram:</b> <span>{{ telegram }}</span>
+          </div>
+          <div>
+            <b>Email:</b> <span>{{ email }}</span>
+          </div>
+          <div>
+            <b>Instagram:</b> <span>{{ instagram }}</span>
+          </div>
+        </div>
+        <div class="column_flex">
+          <div class="address lined padding" style="position: relative">
+            <div>
+              <b>Address:</b> <span>{{ address }}</span>
+              <router-link
+                to="/"
+                style="
+                  display: block;
+                  position: absolute;
+                  bottom: -20px;
+                  left: 180px;
+                "
+                >View in map</router-link
+              >
+            </div>
+          </div>
+          <div class="education lined padding">
+            <div>
+              <b>Education:</b> <span>{{ education }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile_page">
+        <div class="publications"></div>
+        <div class="reviews"></div>
       </div>
     </div>
   </header>
@@ -48,6 +84,30 @@ export default {
     };
   },
   props: {
+    address: {
+      type: String,
+      default: "Abylai Han Koshesi, 1",
+    },
+    education: {
+      type: String,
+      default: "Suleiman Demirel University",
+    },
+    whatsapp: {
+      type: String,
+      default: " https://wa.me/+7472376750",
+    },
+    telegram: {
+      type: String,
+      default: " https://t.me/katsuuud",
+    },
+    instagram: {
+      type: String,
+      default: " https://www.instagram.com/katsuuud?igsh=NzJ2bjY3czNjemxn",
+    },
+    email: {
+      type: String,
+      default: "240118013@sdu.edu.kz",
+    },
     backgroundURL: {
       type: String,
       default: "/images/default-background-image.png",
@@ -76,11 +136,19 @@ export default {
       type: String,
       default: "40000₸",
     },
+    bio: {
+      type: String,
+      default:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. At doloremque veritatis asperiores veniam est minus nisi neque ex, dolores maiores fugit voluptatum impedit quaerat ipsum distinctio similique sit tenetur libero.",
+    },
   },
 };
 </script>
 
 <style scoped>
+.font_larger {
+  font-size: 16px;
+}
 h1 {
   font-weight: 600;
   line-height: 30px;
@@ -100,12 +168,11 @@ h1 {
 }
 .profile_mainInfo {
   display: flex;
-  position: absolute;
+  position: relative;
   top: -50px;
   background-color: rgb(255, 255, 255);
   width: 100%;
   padding: 30px 50px;
-  border: 3px solid rgb(113, 113, 113);
 }
 .container {
   position: relative;
@@ -114,7 +181,7 @@ h1 {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
-  margin: 0 420px 0 50px;
+  margin: 0 490px 0 50px;
 }
 .button_container {
   padding: 10px 40px;
@@ -122,5 +189,29 @@ h1 {
 a {
   color: #0177e4;
   text-decoration: underline;
+}
+
+.profile_container {
+  display: flex;
+  flex-direction: column;
+}
+.bio {
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr;
+  column-gap: 15px;
+}
+b {
+  font-weight: 600;
+}
+.contacts span {
+  color: rgb(49, 49, 49);
+}
+.padding {
+  padding: 20px;
+}
+.bio .column_flex * {
+  width: 100%;
+  height: 50%;
+  font-size: 18px;
 }
 </style>

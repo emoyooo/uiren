@@ -1,6 +1,6 @@
 <template>
   <div class="steps_identificate">
-    <div class="identificator"></div>
+    <div class="identificator active"></div>
     <div class="identificator active"></div>
   </div>
   <div class="login_register_container lined">
@@ -134,6 +134,17 @@
           />
         </label>
       </div>
+      <label for="bio">
+        Bio:
+        <textarea
+          class="lined"
+          name="bio"
+          id="bio"
+          rows="5"
+          cold="50"
+          v-model="FormData.bio"
+        ></textarea>
+      </label>
       <div class="flex buttons">
         <button
           class="button_container submition"
@@ -171,6 +182,7 @@ export default {
         skill: "",
         priceh: "",
         pricem: "",
+        bio: "",
       },
       submitted: false,
     };
@@ -216,6 +228,11 @@ export default {
   margin-top: 20px;
   padding: 40px;
   font-size: 16px;
+}
+#bio {
+  width: 100%;
+  resize: none;
+  padding: 15px;
 }
 .login_register_container form {
   display: flex;
