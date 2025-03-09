@@ -67,8 +67,16 @@
         </div>
       </div>
       <div class="profile_page">
-        <div class="publications"></div>
-        <div class="reviews"></div>
+        <div class="publications">
+          <Publication
+            v-for="post in posts"
+            :key="post.id"
+            :title="post.title"
+            :description="post.description"
+            :mediaSrc="post.mediaSrc"
+          />
+        </div>
+        <div class="reviews lined padding"></div>
       </div>
     </div>
   </header>
@@ -76,7 +84,27 @@
 
 <script>
 import { useRoute } from "vue-router";
+import Publication from "@/components/Publication.vue";
 export default {
+  data() {
+    return {
+      posts: [
+        {
+          id: 1,
+          description:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+          mediaSrc: "/public/images/publication.jpg",
+        },
+        {
+          id: 2,
+          description:
+            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+          mediaSrc:
+            "C:\Users\dinam\Downloads\Uiren\public\images\Genshin Impact 2022-11-06 19-06-00.mp4",
+        },
+      ],
+    };
+  },
   setup() {
     const route = useRoute();
     return {
@@ -142,6 +170,9 @@ export default {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. At doloremque veritatis asperiores veniam est minus nisi neque ex, dolores maiores fugit voluptatum impedit quaerat ipsum distinctio similique sit tenetur libero.",
     },
   },
+  components: {
+    Publication,
+  },
 };
 </script>
 
@@ -149,6 +180,7 @@ export default {
 .font_larger {
   font-size: 16px;
 }
+
 h1 {
   font-weight: 600;
   line-height: 30px;
