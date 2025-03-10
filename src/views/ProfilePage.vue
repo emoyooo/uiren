@@ -48,7 +48,7 @@
             <div>
               <b>Address:</b> <span>{{ address }}</span>
               <router-link
-                to="/"
+                to="/map"
                 style="
                   display: block;
                   position: absolute;
@@ -99,8 +99,7 @@ export default {
           id: 2,
           description:
             "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-          mediaSrc:
-            "C:\Users\dinam\Downloads\Uiren\public\images\Genshin Impact 2022-11-06 19-06-00.mp4",
+          mediaSrc: "C:\Users\dinam\Downloads\Uiren\public\images\vid.mp4",
         },
       ],
     };

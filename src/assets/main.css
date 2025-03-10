@@ -14,6 +14,7 @@
 body {
   font-family: "Ubuntu", sans-serif;
   color: black;
+  background-color: #f4f4f49a;
 }
 
 a {
@@ -35,4 +36,5 @@ a {
 .lined {
   border: 1px solid #b9b9b9;
   border-radius: 30px;
+  background-color: white;
 }

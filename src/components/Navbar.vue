@@ -38,6 +38,7 @@ nav {
   width: 100%;
   padding: 20px;
   top: 0px;
+  z-index: 10;
   background-image: linear-gradient(
     rgba(98, 98, 98, 0.755),
     rgba(110, 110, 110, 0)

@@ -5,8 +5,10 @@
         :is="mediaTag"
         :src="mediaSrc"
         v-if="mediaSrc"
-        class="video"
+        class="media"
         controls
+        width="100%"
+        height="100%"
       ></component>
     </div>
     <div class="description">
@@ -45,9 +47,8 @@ export default {
   width: 50%;
   margin: 50px auto;
 }
-.video {
-  max-width: 500px;
-  max-width: 100%;
+.media {
+  max-width: 1000px;
   object-fit: contain;
   display: block;
 }
