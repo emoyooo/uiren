@@ -1,8 +1,5 @@
 <template>
   <main class="container">
-    <div class="search-bar">
-      <input type="text" v-model="searchQuery" placeholder="Search creators by name, skill, or city..." />
-    </div>
     <div class="cards">
       <CreatorsCard
         v-for="creator in filteredCreators"
@@ -25,20 +22,19 @@ export default {
     CreatorsCard,
   },
   props: {
-    initialSearchQuery: {
-      type: String,
-      default: '',
+    searchFilters: {
+      type: Object,
+      default: () => ({ category: "", location: "" }),
     },
   },
   data() {
     return {
-      searchQuery: this.initialSearchQuery,
       creators: [
         {
           id: 1,
           imageURL: "/public/images/1.jpg",
           name: "Vladimir",
-          skillCategory: "Web Developer",
+          skillCategory: "Guitar",
           text: "Professional guitarist with 10+ years of experience. Specializes in blues, rock, and classical guitar.",
           city: "Kaskelen",
         },
@@ -46,7 +42,7 @@ export default {
           id: 2,
           imageURL: "/public/images/2.jpg",
           name: "Aigul",
-          skillCategory: "Graphic Designer",
+          skillCategory: "Graphic Design",
           text: "Expert in 3D modeling and animation. Works with Blender, Maya, and ZBrush to create stunning digital art.",
           city: "Almaty",
         },
@@ -54,7 +50,7 @@ export default {
           id: 3,
           imageURL: "/public/images/3.jpg",
           name: "Marat",
-          skillCategory: "Opera Singer",
+          skillCategory: "Singing",
           text: "Trained opera singer with performances in national and international theaters. Teaches vocal techniques and stage presence.",
           city: "Astana",
         },
@@ -62,7 +58,7 @@ export default {
           id: 4,
           imageURL: "/public/images/9.jpg",
           name: "Dina",
-          skillCategory: "Calligraphy Artist",
+          skillCategory: "Drawing",
           text: "Passionate calligrapher specializing in modern and Arabic calligraphy. Teaches brush pen and ink techniques.",
           city: "Aktobe",
         },
@@ -70,7 +66,7 @@ export default {
           id: 5,
           imageURL: "/public/images/3.jpg",
           name: "Serik",
-          skillCategory: "Woodworker & Carpenter",
+          skillCategory: "Jewelery",
           text: "Creates handmade furniture and wood carvings. Offers classes in woodworking and DIY home projects.",
           city: "Almaty",
         },
@@ -78,7 +74,7 @@ export default {
           id: 6,
           imageURL: "/public/images/8.jpg",
           name: "Sofia",
-          skillCategory: "Ballet Instructor",
+          skillCategory: "Dancing",
           text: "Professional ballerina with experience in classical and contemporary dance. Conducts private and group ballet lessons.",
           city: "Almaty",
         },
@@ -86,7 +82,7 @@ export default {
           id: 7,
           imageURL: "/public/images/6.jpg",
           name: "Amir",
-          skillCategory: "Full-Stack Developer",
+          skillCategory: "Software development",
           text: "Software engineer specializing in web development (React, Vue, Node.js). Helps beginners build projects from scratch.",
           city: "Shymkent",
         },
@@ -94,7 +90,7 @@ export default {
           id: 8,
           imageURL: "/public/images/7.jpg",
           name: "Elena",
-          skillCategory: "Painter & Illustrator",
+          skillCategory: "Drawing",
           text: "Fine artist and illustrator skilled in acrylic, watercolor, and digital painting. Offers step-by-step art coaching.",
           city: "Astana",
         },
@@ -103,19 +99,18 @@ export default {
   },
   computed: {
     filteredCreators() {
-      return this.creators.filter(creator => {
-        const query = this.searchQuery.toLowerCase();
-        return (
-          creator.name.toLowerCase().includes(query) ||
-          creator.skillCategory.toLowerCase().includes(query) ||
-          creator.city.toLowerCase().includes(query)
-        );
+      const { category, location } = this.searchFilters;
+
+      return this.creators.filter((creator) => {
+        const matchesCategory =
+          !category ||
+          creator.skillCategory.toLowerCase().includes(category.toLowerCase());
+        const matchesLocation =
+          !location ||
+          creator.city.toLowerCase().includes(location.toLowerCase());
+
+        return matchesCategory && matchesLocation;
       });
-    },
-  },
-  watch: {
-    initialSearchQuery(newQuery) {
-      this.searchQuery = newQuery;
     },
   },
 };
@@ -125,20 +120,6 @@ export default {
 .container {
   padding: 20px;
 }
-
-.search-bar {
-  margin-bottom: 20px;
-}
-
-.search-bar input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

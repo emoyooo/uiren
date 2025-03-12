@@ -52,7 +52,7 @@
                 style="
                   display: block;
                   position: absolute;
-                  bottom: -20px;
+                  bottom: -15px;
                   left: 180px;
                 "
                 >View in map</router-link
@@ -231,14 +231,8 @@ a {
   grid-template-columns: 3fr 2fr 2fr;
   column-gap: 15px;
 }
-b {
-  font-weight: 600;
-}
 .contacts span {
   color: rgb(49, 49, 49);
-}
-.padding {
-  padding: 20px;
 }
 .bio .column_flex * {
   width: 100%;

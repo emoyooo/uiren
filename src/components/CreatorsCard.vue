@@ -36,9 +36,10 @@ export default {
 
 <style>
 .pfp img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50px;
+  width: 70px;
+  height: 70px;
+  border-radius: 60px;
+  object-fit: cover;
 }
 .pfp {
   width: fit-content;
@@ -61,10 +62,11 @@ export default {
   color: white;
   width: fit-content;
   border-radius: 20px;
+  line-height: 25px;
 }
 .card_ownerFull {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   column-gap: 20px;
 }
 .caption {

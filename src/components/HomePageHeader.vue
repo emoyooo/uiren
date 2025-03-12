@@ -4,7 +4,7 @@
       <div class="header_content">
         <h1 v-html="headerTitle"></h1>
         <p>{{ headerText }}</p>
-        <HeaderSearch @search="updateSearchQuery" />
+        <HeaderSearch @search="emitSearchFilters" />
       </div>
     </div>
   </header>
@@ -14,21 +14,19 @@
 import HeaderSearch from "./HeaderSearch.vue";
 
 export default {
+  components: {
+    HeaderSearch,
+  },
   data() {
     return {
       headerTitle: "Get Skill<br>Share Skill",
       headerText:
         "Uiren is a peer-to-peer skill-sharing platform that helps you find experts and mentors in your local area. Whether you want to learn a new skill or share your expertise, Uiren connects you with passionate individuals nearby.",
-      searchQuery: '',
     };
   },
-  components: {
-    HeaderSearch,
-  },
   methods: {
-    updateSearchQuery(query) {
-      this.searchQuery = query;
-      this.$emit('search', query);
+    emitSearchFilters(filters) {
+      this.$emit("search", filters);
     },
   },
 };
@@ -43,7 +41,6 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  z-index: -1;
 }
 .header_content {
   display: flex;
@@ -53,10 +50,8 @@ header {
   flex-direction: column;
   row-gap: 30px;
 }
-
 h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  line-height: normal;
 }
 </style>
