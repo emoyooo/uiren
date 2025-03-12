@@ -1,11 +1,8 @@
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store'; // Import Vuex store
+import './firebase'; // Ensure Firebase is initialized
 import './assets/main.css'
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-
-const app = createApp(App)
-
-app.use(router)
-
-app.mount('#app')
+createApp(App).use(router).use(store).mount('#app'); // Use Vuex store

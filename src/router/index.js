@@ -5,6 +5,7 @@ import RegisterPage from "@/views/RegisterPage.vue";
 import LoginPage from "@/views/LoginPage.vue";
 import CreatorReg from "@/views/CreatorReg.vue";
 import UserReg from "@/views/UserReg.vue";
+import Dashboard from "@/views/Dashboard.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
     {
       path: "/userRegister",
       component: UserReg,
+    },
+    {
+      path: "/dashboard",
+      name: "Dashboard",
+      component: Dashboard,
     },
   ],
 });

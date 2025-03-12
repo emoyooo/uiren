@@ -36,10 +36,23 @@
       </div>
     </div>
   </header>
+  <div class="profile_page">
+    <h1>Profile</h1>
+    <div v-if="userProfile">
+      <p><strong>Name:</strong> {{ userProfile.name }}</p>
+      <p><strong>Email:</strong> {{ userProfile.email }}</p>
+      <!-- Add more profile fields as needed -->
+    </div>
+    <div v-else>
+      <p>Loading profile...</p>
+    </div>
+  </div>
 </template>
 
 <script>
 import { useRoute } from "vue-router";
+import { mapState } from "vuex";
+
 export default {
   setup() {
     const route = useRoute();
@@ -77,6 +90,9 @@ export default {
       default: "40000₸",
     },
   },
+  computed: {
+    ...mapState(['userProfile']),
+  },
 };
 </script>
 
@@ -84,6 +100,7 @@ export default {
 h1 {
   font-weight: 600;
   line-height: 30px;
+  color: white;
 }
 .filled_text {
   text-wrap: nowrap;
@@ -102,7 +119,7 @@ h1 {
   display: flex;
   position: absolute;
   top: -50px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
   width: 100%;
   padding: 30px 50px;
   border: 3px solid rgb(113, 113, 113);
@@ -115,9 +132,12 @@ h1 {
   flex-direction: column;
   row-gap: 10px;
   margin: 0 420px 0 50px;
+  color: white;
 }
 .button_container {
   padding: 10px 40px;
+  background-color: #555;
+  color: white;
 }
 a {
   color: #0177e4;

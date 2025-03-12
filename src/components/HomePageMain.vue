@@ -2,6 +2,14 @@
   <main class="container">
     <div class="search-bar">
       <input type="text" v-model="searchQuery" placeholder="Search creators by name, skill, or city..." />
+      <select v-model="searchCategory">
+        <option value="">All Categories</option>
+        <option value="web-developer">Web Developer</option>
+        <option value="graphic-designer">Graphic Designer</option>
+        <option value="opera-singer">Opera Singer</option>
+        <!-- Add more categories as needed -->
+      </select>
+      <button class="search-button" @click="search">Search</button>
     </div>
     <div class="cards">
       <CreatorsCard
@@ -33,6 +41,7 @@ export default {
   data() {
     return {
       searchQuery: this.initialSearchQuery,
+      searchCategory: "",
       creators: [
         {
           id: 1,
@@ -105,10 +114,12 @@ export default {
     filteredCreators() {
       return this.creators.filter(creator => {
         const query = this.searchQuery.toLowerCase();
+        const category = this.searchCategory.toLowerCase();
         return (
-          creator.name.toLowerCase().includes(query) ||
+          (creator.name.toLowerCase().includes(query) ||
           creator.skillCategory.toLowerCase().includes(query) ||
-          creator.city.toLowerCase().includes(query)
+          creator.city.toLowerCase().includes(query)) &&
+          (category === "" || creator.skillCategory.toLowerCase().includes(category))
         );
       });
     },
@@ -116,6 +127,12 @@ export default {
   watch: {
     initialSearchQuery(newQuery) {
       this.searchQuery = newQuery;
+    },
+  },
+  methods: {
+    search() {
+      console.log("Searching for:", this.searchQuery, "in category:", this.searchCategory);
+      this.$router.push({ path: '/search', query: { q: this.searchQuery, category: this.searchCategory } });
     },
   },
 };
@@ -127,16 +144,46 @@ export default {
 }
 
 .search-bar {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .search-bar input {
-  width: 100%;
+  flex: 1;
+  width: auto;
   padding: 10px;
-  border: 1px solid #ccc;
+  margin-right: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
   border-radius: 5px;
   box-sizing: border-box;
-  margin-bottom: 10px;
+}
+
+.search-bar select {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #666;
 }
 
 .cards {
