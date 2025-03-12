@@ -6,7 +6,7 @@
       </div>
       <div class="main_nav">
         <router-link to="/">Home</router-link>
-        <a href="#">Categories</a>
+        <a href="/categories">Categories</a>
         <router-link :to="{ name: 'Profile', params: { id: userId } }"
           >My profile</router-link
         >

@@ -1,5 +1,5 @@
 <template>
-  <div class="container login_page">
+  <div class="container login_page marginTop">
     <h1>Registration</h1>
     <div>
       <FirstStep v-if="currentComponent === 'one'" @switch="switchComponent" />
@@ -43,7 +43,6 @@ export default {
   font-weight: 600;
 }
 .login_page {
-  margin-top: 120px;
   width: 30%;
 }
 </style>

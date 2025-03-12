@@ -1,5 +1,5 @@
 <template>
-  <div class="container map_page">
+  <div class="container map_page marginTop">
     <h2>View in map</h2>
     <h1 style="font-weight: 600">{{ country }}, {{ city }}, {{ address }}</h1>
     <div class="map_container lined">
@@ -35,9 +35,6 @@ export default {
 </script>
 
 <style>
-.map_page {
-  margin-top: 120px;
-}
 .map_container {
   overflow: hidden;
   height: fit-content;

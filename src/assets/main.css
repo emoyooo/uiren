@@ -37,6 +37,9 @@ a {
   align-items: center;
   row-gap: 5px;
 }
+.marginTop {
+  margin-top: 120px;
+}
 
 .lined {
   border: 1px solid #b9b9b9;

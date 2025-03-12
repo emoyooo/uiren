@@ -6,6 +6,7 @@ import LoginPage from "@/views/LoginPage.vue";
 import CreatorReg from "@/views/CreatorReg.vue";
 import UserReg from "@/views/UserReg.vue";
 import Map from "@/views/Map.vue";
+import Categories from "@/views/Categories.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -39,6 +40,10 @@ const router = createRouter({
     {
       path: "/userRegister",
       component: UserReg,
+    },
+    {
+      path: "/categories",
+      component: Categories,
     },
   ],
 });
