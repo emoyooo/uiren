@@ -1,82 +1,86 @@
 <template>
   <header>
-    <div
-      class="profile_background"
-      :style="{ backgroundImage: `url(${backgroundURL})` }"
-    ></div>
-    <div class="container profile_container">
-      <div class="profile_mainInfo lined">
-        <div class="pfp">
-          <img :src="ImageURL" alt="" />
-        </div>
-        <div class="infotext">
-          <h1>{{ name }}</h1>
-          <div class="flex">
-            <div class="filled_text">
-              <h3>{{ skillCategory }}</h3>
+    <div class="profilePage">
+      <div class="profile_container">
+        <div
+          class="profile_background"
+          :style="{ backgroundImage: `url(${backgroundURL})` }"
+        ></div>
+        <div class="container profile_container">
+          <div class="profile_mainInfo lined">
+            <div class="pfp">
+              <img :src="ImageURL" alt="" />
             </div>
-            <span>/</span>
-            <div class="filled_text">
-              <h3>{{ location }}</h3>
-            </div>
-          </div>
-          <div class="price">
-            <span>{{ priceHour }} / {{ priceMonth }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="bio font_larger">
-        <div class="bio_text lined padding">
-          <p>{{ bio }}</p>
-        </div>
-        <div class="contacts lined padding">
-          <div>
-            <b>Whatsapp:</b> <span>{{ whatsapp }}</span>
-          </div>
-          <div>
-            <b>Telegram:</b> <span>{{ telegram }}</span>
-          </div>
-          <div>
-            <b>Email:</b> <span>{{ email }}</span>
-          </div>
-          <div>
-            <b>Instagram:</b> <span>{{ instagram }}</span>
-          </div>
-        </div>
-        <div class="column_flex">
-          <div class="address lined padding" style="position: relative">
-            <div>
-              <b>Address:</b> <span>{{ address }}</span>
-              <router-link
-                to="/map"
-                style="
-                  display: block;
-                  position: absolute;
-                  bottom: -15px;
-                  left: 180px;
-                "
-                >View in map</router-link
-              >
+            <div class="infotext">
+              <h1>{{ name }}</h1>
+              <div class="flex">
+                <div class="filled_text">
+                  <h3>{{ skillCategory }}</h3>
+                </div>
+                <span>/</span>
+                <div class="filled_text">
+                  <h3>{{ location }}</h3>
+                </div>
+              </div>
+              <div class="price">
+                <span>{{ priceHour }} / {{ priceMonth }}</span>
+              </div>
             </div>
           </div>
-          <div class="education lined padding">
-            <div>
-              <b>Education:</b> <span>{{ education }}</span>
+          <div class="bio font_larger">
+            <div class="bio_text lined padding">
+              <p>{{ bio }}</p>
+            </div>
+            <div class="contacts lined padding">
+              <div>
+                <b>Whatsapp:</b> <span>{{ whatsapp }}</span>
+              </div>
+              <div>
+                <b>Telegram:</b> <span>{{ telegram }}</span>
+              </div>
+              <div>
+                <b>Email:</b> <span>{{ email }}</span>
+              </div>
+              <div>
+                <b>Instagram:</b> <span>{{ instagram }}</span>
+              </div>
+            </div>
+            <div class="column_flex">
+              <div class="address lined padding" style="position: relative">
+                <div>
+                  <b>Address:</b> <span>{{ address }}</span>
+                  <router-link
+                    to="/map"
+                    style="
+                      display: block;
+                      position: absolute;
+                      bottom: -15px;
+                      left: 180px;
+                    "
+                    >View in map</router-link
+                  >
+                </div>
+              </div>
+              <div class="education lined padding">
+                <div>
+                  <b>Education:</b> <span>{{ education }}</span>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="profile_page">
+            <div class="publications">
+              <Publication
+                v-for="post in posts"
+                :key="post.id"
+                :title="post.title"
+                :description="post.description"
+                :mediaSrc="post.mediaSrc"
+              />
+            </div>
+            <div class="reviews lined padding"></div>
+          </div>
         </div>
-      </div>
-      <div class="profile_page">
-        <div class="publications">
-          <Publication
-            v-for="post in posts"
-            :key="post.id"
-            :title="post.title"
-            :description="post.description"
-            :mediaSrc="post.mediaSrc"
-          />
-        </div>
-        <div class="reviews lined padding"></div>
       </div>
     </div>
   </header>
@@ -238,5 +242,21 @@ a {
   width: 100%;
   height: 50%;
   font-size: 18px;
+}
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.nav-tab {
+  margin: 0 15px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.nav-tab.active-tab {
+  border-color: #0177e4;
 }
 </style>

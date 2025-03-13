@@ -51,7 +51,7 @@ export default {
   color: black;
   padding: 20px 30px;
   border-radius: 30px;
-  background-color: white;
+  background-color: #ffffff;
 }
 .card_owner h2 {
   font-weight: 500;
@@ -59,7 +59,7 @@ export default {
 .skill_category {
   padding: 2px 15px;
   background-color: #0177e4;
-  color: white;
+  color: rgb(255, 255, 255);
   width: fit-content;
   border-radius: 20px;
   line-height: 25px;

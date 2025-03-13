@@ -31,3 +31,22 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.nav-tab {
+  margin: 0 15px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: black;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.nav-tab.active-tab {
+  border-color: #0177e4;
+}
+</style>

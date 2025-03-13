@@ -36,11 +36,11 @@ export default {
 header {
   width: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/public/images/pexels-pixabay-33597.jpg");
+    url("C:\Users\dinam\Downloads\Uiren\public\images\pexels-pixabay-33597.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .header_content {
   display: flex;
