@@ -123,7 +123,7 @@
 .flex {
   column-gap: normal;
   justify-content: space-around;
-  font-size: 20px;
+  font-size: 18px;
 }
 span {
   color: rgb(60, 60, 60);
